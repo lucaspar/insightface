@@ -1,16 +1,19 @@
 """Creation of ArcFace's ResNet-based models."""
+import os
 import sys
 
-sys.path.append("../../../")
+# add "src/" dir to system path
+N_LEVELS_UP = 4
+sys.path.append(os.pathsep.join([".."] * N_LEVELS_UP))
+
 # pylint: disable=import-error,no-name-in-module
-from utils.logger import create_logger
+from pareidolia.utils.logger import create_logger
 
 log = create_logger(__name__)
 from typing import Iterable, Optional, Tuple
 
 import torch
 from torch import nn
-
 
 __all__ = ["iresnet18", "iresnet34", "iresnet50", "iresnet100", "iresnet200"]
 
