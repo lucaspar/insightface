@@ -7,9 +7,9 @@ N_LEVELS_UP = 4
 sys.path.append(os.pathsep.join([".."] * N_LEVELS_UP))
 
 # pylint: disable=import-error,no-name-in-module
-from pareidolia.utils.logger import create_logger
+from tools import logger
 
-log = create_logger(__name__)
+log = logger.create_logger(__name__)
 from typing import Iterable, Optional, Tuple
 
 import torch
